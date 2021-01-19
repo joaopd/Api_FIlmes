@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "izaTjujznbTwfkou5kzr+bcOHxowH6qqGjDPLBr0SN+qah0GNoLazKhJ5OL0marFknaiTl8Jmb7x43GOuJsVew==",
+  "dgSpecHash": "2dk0qg/XkNK7jARZKJmmql25S3Nqyxv9yxOVJHvNcJp0eMe/qs3jIUIM8GZzoTrCFStUOBbhNEs8ifZ8l8Nx4w==",
   "success": true,
-  "projectFilePath": "c:\\Users\\jpkab\\Documents\\Projetos\\.NETECORE\\API_FILME\\src\\Api.Service\\Service.csproj",
+  "projectFilePath": "C:\\Users\\jpkab\\Documents\\Projetos\\.NETECORE\\API_FILME\\src\\Api.Service\\Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkab\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\jpkab\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

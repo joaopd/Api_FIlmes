@@ -62,7 +62,7 @@ namespace Api.Service.Services
             new Claim[]
             {
               new Claim(ClaimTypes.Name, user.Email.ToString()),
-              new Claim(ClaimTypes.Name, user.Role.ToString())
+              new Claim(ClaimTypes.Role, user.Role.ToString())
 
             }
           );
@@ -108,7 +108,7 @@ namespace Api.Service.Services
         expiration = expirionDate.ToString("yyyy-MM-dd HH:mm:ss"),
         acessToken = token,
         userName = user.Email,
-        roles = user.Role,
+        Roles = user.Role,
         messege = "Usuario logado com Sucesso"
       };
     }

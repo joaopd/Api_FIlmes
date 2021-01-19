@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Application.Controllers
 {
+  [Authorize("Bearer")]
   [Route("api/[controller]")]
   [ApiController]
   public class UsersController : ControllerBase
@@ -18,9 +19,8 @@ namespace Api.Application.Controllers
       _service = service;
     }
 
-    [Authorize("Bearer")]
     [HttpGet]
-  
+    [Authorize(Roles = "ADM")]
     public async Task<ActionResult> GetAll()
     {
       if (!ModelState.IsValid)
@@ -37,8 +37,8 @@ namespace Api.Application.Controllers
       }
     }
 
-    [Authorize("Bearer")]
     [HttpGet]
+    [Authorize(Roles = "ADM")]
     [Route("{id}", Name = "GetWithId")]
     public async Task<ActionResult> Get(int id)
     {
@@ -81,7 +81,6 @@ namespace Api.Application.Controllers
       }
     }
 
-    [Authorize("Bearer")]
     [HttpPut]
     public async Task<ActionResult> Put([FromBody] UserEntity user)
     {
@@ -107,7 +106,6 @@ namespace Api.Application.Controllers
       }
     }
 
-    [Authorize("Bearer")]
     [HttpDelete("{id}")]
     public async Task<ActionResult> Delete(int id)
     {

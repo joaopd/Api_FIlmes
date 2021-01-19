@@ -25,6 +25,8 @@ namespace Application
 
     public void ConfigureServices(IServiceCollection services)
     {
+
+      services.AddCors();
       ConfigureService.ConfigureDependenceService(services);
 
       ConfigureRepository.ConfigureDependenceRepository(services);
@@ -63,7 +65,7 @@ namespace Application
         // computadores envolvidos no processo de comunicação)
         paramsValidation.ClockSkew = TimeSpan.Zero;
       });
-      
+
 
       services.AddAuthorization(auth =>
       {
@@ -127,7 +129,14 @@ namespace Application
 
       app.UseRouting();
 
+      app.UseCors(x => x
+               .AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader());
+               
+      app.UseAuthentication();
       app.UseAuthorization();
+      
 
       app.UseEndpoints(endpoints =>
       {

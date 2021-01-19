@@ -20,7 +20,7 @@ namespace Api.Application.Controllers
     }
 
     [HttpPost]
-    [Route("Avaliar", Name = "Avaliar")]
+    [Route("RateMovie", Name = "Avaliar")]
     public async Task<ActionResult> Avaliar([FromBody] AvaliacaoEntity item)
     {
       if (!ModelState.IsValid)

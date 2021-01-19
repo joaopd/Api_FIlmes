@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Application.Controllers
 {
+  [Authorize("Bearer")]
   [Route("api/[controller]")]
   [ApiController]
   public class FilmesController : ControllerBase
@@ -18,9 +19,8 @@ namespace Api.Application.Controllers
       _service = service;
     }
 
-    [Authorize("Bearer")]
     [HttpGet]
-    [Route("GetAll")]
+    [Route("GetMovie")]
     public async Task<ActionResult> GetList()
     {
       if (!ModelState.IsValid)
@@ -38,10 +38,8 @@ namespace Api.Application.Controllers
       }
     }
 
- 
-    [Authorize("Bearer")]
     [HttpGet]
-    [Route("GetId", Name = "GetListId")]
+    [Route("GetMovieById", Name = "GetListId")]
     public async Task<ActionResult> Get(int id)
     {
       if (!ModelState.IsValid)
@@ -58,9 +56,8 @@ namespace Api.Application.Controllers
       }
     }
 
-    [Authorize("Bearer")]
     [HttpGet]
-    [Route("GetGenero", Name = "GetListGenero")]
+    [Route("GetMovieByGenre", Name = "GetListGenero")]
     public async Task<ActionResult> GetGenero(string Gernero)
     {
       if (!ModelState.IsValid)
@@ -77,9 +74,8 @@ namespace Api.Application.Controllers
       }
     }
 
-    [Authorize("Bearer")]
     [HttpGet]
-    [Route("GetDiretor", Name = "GetListDiretor")]
+    [Route("GetMovieByDirector", Name = "GetListDiretor")]
     public async Task<ActionResult> GetDiretor(string Diretor)
     {
       if (!ModelState.IsValid)
@@ -95,10 +91,8 @@ namespace Api.Application.Controllers
         return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
       }
     }
-
-    [Authorize("Bearer")]
     [HttpGet]
-    [Route("GetName", Name = "GetName")]
+    [Route("GetMovieByName", Name = "GetName")]
     public async Task<ActionResult> GetName(string Name)
     {
       if (!ModelState.IsValid)
@@ -114,10 +108,10 @@ namespace Api.Application.Controllers
         return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
       }
     }
-
-    [Authorize("Bearer")]
     [HttpPost]
-    [Route("Incluir")]
+    [Route("IncludeMovie")]
+    [Authorize(Roles = "ADM")]
+
     public async Task<ActionResult> Post([FromBody] FilmeEntity filme)
     {
       if (!ModelState.IsValid)
@@ -143,9 +137,10 @@ namespace Api.Application.Controllers
       }
     }
 
-    [Authorize("Bearer")]
     [HttpPut]
-    [Route("Alterar")]
+    [Route("ChangeMovie")]
+    [Authorize(Roles = "ADM")]
+
     public async Task<ActionResult> Put([FromBody] FilmeEntity filme)
     {
       if (!ModelState.IsValid)
@@ -171,7 +166,7 @@ namespace Api.Application.Controllers
     }
 
     [HttpDelete("{id}")]
-    [Authorize("Bearer")]
+    [Authorize(Roles = "ADM")]
     public async Task<ActionResult> Delete(int id)
     {
 
