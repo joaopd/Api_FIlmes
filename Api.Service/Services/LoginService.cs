@@ -11,6 +11,7 @@ using Api.Domain.Security;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
+
 namespace Api.Service.Services
 {
   public class LoginService : ILoginService
@@ -35,30 +36,27 @@ namespace Api.Service.Services
     public async Task<object> FindByLogin(LoginDto user)
     {
       var baseUser = new UserEntity();
-      var baseUser2 = new UserEntity();
-      var baseUser3 = new UserEntity();
 
 
       if (user != null && !string.IsNullOrWhiteSpace(user.Email))
       {
 
         baseUser = await _repository.FindByLogin(user.Email);
-        baseUser2 = await _repository.FindByLogin1(user.Password);
-        baseUser3 = await _repository.FindByLogin2(user.Role);
+        
 
-
-        if (baseUser == null || baseUser2 == null || baseUser3 == null)
+        if (baseUser == null || baseUser.Senha != user.Password)
         {
           return new
           {
             autenticated = false,
             message = "Nao foi possivel efetuar login, Usuario ou senha incorreto"
           };
+
         }
         else
         {
           ClaimsIdentity identity = new ClaimsIdentity(
-            new GenericIdentity(baseUser.Email,baseUser2.Senha),
+            new GenericIdentity(baseUser.Email),
             new Claim[]
             {
               new Claim(ClaimTypes.Name, user.Email.ToString()),

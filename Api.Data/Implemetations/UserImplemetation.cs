@@ -19,13 +19,5 @@ namespace Api.Data.Implemetations
       return await _dataset.FirstOrDefaultAsync(u => u.Email.Equals(Email));
     }
 
-    public async Task<UserEntity> FindByLogin1(string senha)
-    {
-      return await _dataset.FirstOrDefaultAsync(u => u.Senha.Equals(senha));
-    }
-        public async Task<UserEntity> FindByLogin2(string role)
-    {
-      return await _dataset.FirstOrDefaultAsync(u => u.Role.Equals(role));
-    }
   }
 }
