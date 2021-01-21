@@ -10,7 +10,7 @@ namespace Api.Domain.Models
         }
 
         private string _name;
-        public string MyProperty
+        public string Name
         {
             get { return _name; }
             set { _name = value; }
@@ -21,6 +21,18 @@ namespace Api.Domain.Models
         {
             get { return _email; }
             set { _email = value; }
+        }
+        private string _role;
+        public string Role
+        {
+            get { return _role; }
+            set { _role = value; }
+        }
+        private string _senha;
+        public string Senha
+        {
+            get { return _senha; }
+            set { _senha = value; }
         }
         
     }

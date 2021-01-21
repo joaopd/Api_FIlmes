@@ -9,7 +9,7 @@ namespace Api.Data.Mapping
     public void Configure(EntityTypeBuilder<FilmeEntity> builder)
     {
       builder.ToTable("Filmes");
-      
+
       builder.HasKey(u => u.Id);
 
       builder.Property(u => u.Name)
@@ -20,7 +20,14 @@ namespace Api.Data.Mapping
       builder.Property(u => u.Gernero)
               .IsRequired()
               .HasMaxLength(254);
-      
+
+      builder.Property(u => u.Diretor)
+              .HasMaxLength(254);
+              
+
+      builder.Property(u => u.Imagem)
+              .HasMaxLength(254);
+
     }
   }
 }

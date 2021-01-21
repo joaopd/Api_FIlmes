@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Application.Controllers
 {
-  [Authorize("Bearer")]
+
   [Route("api/[controller]")]
   [ApiController]
   public class UsersController : ControllerBase
@@ -82,6 +82,7 @@ namespace Api.Application.Controllers
     }
 
     [HttpPut]
+    [Authorize("Bearer")]
     public async Task<ActionResult> Put([FromBody] UserDtoUpdate user)
     {
       if (!ModelState.IsValid)
@@ -107,6 +108,7 @@ namespace Api.Application.Controllers
     }
 
     [HttpDelete("{id}")]
+    [Authorize("Bearer")]
     public async Task<ActionResult> Delete(int id)
     {
       if (!ModelState.IsValid)
