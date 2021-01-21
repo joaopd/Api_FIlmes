@@ -12,6 +12,6 @@ namespace Api.Domain.Dto
 
     [Required(ErrorMessage = "Senha obrigatoria")]
     public string Password { get; set; }
-    public string Role { get; set; }
+   // public string Role { get; set; }
   }
 }
