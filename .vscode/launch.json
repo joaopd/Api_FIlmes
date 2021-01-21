@@ -19,7 +19,7 @@
       },
       "env": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "DB_CONNECTION":"Server=(localdb)\\MSSQLLocalDB;Initial catalog=dbAPI1;MultipleActiveResultSets=true;User ID=adm;pwd=112233",
+        "DB_CONNECTION":"Server=(localdb)\\MSSQLLocalDB;Initial catalog=dbAPI2;MultipleActiveResultSets=true;User ID=adm;pwd=112233",
         "DATABASE" : "SQLSERVER",
         "MIGRATION": "APLICAR"
 

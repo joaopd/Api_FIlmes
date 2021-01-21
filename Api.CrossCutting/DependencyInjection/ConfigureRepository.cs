@@ -1,3 +1,4 @@
+using System;
 using Api.Data.Context;
 using Api.Data.Implemetations;
 using Api.Data.Repository;
@@ -18,14 +19,16 @@ namespace Api.CrossCutting.DependencyInjection
       serviceCollection.AddScoped<IAvaliarRepository, AvaliarImplemetation>();
 
 
-
-
-      serviceCollection.AddDbContext<MyContext>(
-         //options => options.UseMySql("Server=localhost;port=3306;Database=dbAPI;UID=root;pwd=mudar@123")
-         options => options.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Initial catalog=dbAPI1;MultipleActiveResultSets=true;User ID=adm;pwd=112233")
-
-     );
-
+      if (Environment.GetEnvironmentVariable("DATABASE").ToLower() == "SQLSERVER".ToLower())
+      {
+        serviceCollection.AddDbContext<MyContext>(
+        options => options.UseSqlServer(Environment.GetEnvironmentVariable("DB_CONNECTION")));
+      }
+      else
+      {
+        serviceCollection.AddDbContext<MyContext>(
+        options => options.UseMySql(Environment.GetEnvironmentVariable("DB_CONNECTION")));
+      }
     }
   }
 }
