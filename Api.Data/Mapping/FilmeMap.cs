@@ -23,10 +23,11 @@ namespace Api.Data.Mapping
 
       builder.Property(u => u.Diretor)
               .HasMaxLength(254);
-              
 
-      builder.Property(u => u.Imagem)
-              .HasMaxLength(254);
+
+      builder.Property(u => u.Imagem);
+
+
 
     }
   }

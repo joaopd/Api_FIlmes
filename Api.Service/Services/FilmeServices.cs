@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Data.Context;
+using Api.Domain.Dto;
+using Api.Domain.Dto.User;
 using Api.Domain.Entities;
 using Api.Domain.Interfaces;
 using Api.Domain.Interfaces.Services.Filmes;
+using Api.Domain.Models.Filmes;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
 namespace Api.Service.Services
@@ -15,15 +19,16 @@ namespace Api.Service.Services
     protected readonly MyContext _context;
     private DbSet<FilmeEntity> _dataSet;
     private IRepository<FilmeEntity> _repository;
-    private IRepository<UserEntity> _Acesso;
 
 
-    public FilmeServices(IRepository<FilmeEntity> repository, IRepository<UserEntity> Acesso, MyContext context)
+    private readonly IMapper _mapper;
+    public FilmeServices(IRepository<FilmeEntity> repository, MyContext context, IMapper mapper)
     {
-      _Acesso = Acesso;
+
       _repository = repository;
       _context = context;
       _dataSet = context.Set<FilmeEntity>();
+      _mapper = mapper;
     }
 
 
@@ -33,29 +38,30 @@ namespace Api.Service.Services
       return await _repository.DeleteAsync(id);
     }
 
-    public async Task<FilmeEntity> Get(int id)
+    public async Task<FilmesDto> Get(int id)
     {
-
-      return await _repository.SelectAsync(id);
+      var entity = await _repository.SelectAsync(id);
+      return _mapper.Map<FilmesDto>(entity);
     }
 
-    public Task<IEnumerable<FilmeEntity>> GetAll()
+    public Task<IEnumerable<FilmesDto>> GetAll()
     {
       throw new NotImplementedException();
     }
 
-    public async Task<IEnumerable<FilmeEntity>> GetAtores(string Atores)
+    public async Task<IEnumerable<FilmesDto>> GetAtores(string Atores)
     {
-       var comp = Atores;
-      var diretor = _context.Filmes
+      var comp = Atores;
+      var atores = _context.Filmes
             .OrderBy(p => p.Name)
             .Include(c => c.NomesAtores)
             .Include(c => c.Avaliacao)
             .AsNoTracking();
-      return await diretor.ToListAsync();
+      var entity = await atores.ToListAsync();
+      return _mapper.Map<IEnumerable<FilmesDto>>(entity);
     }
 
-    public async Task<IEnumerable<FilmeEntity>> GetDiretor(string Diretor)
+    public async Task<IEnumerable<FilmesDto>> GetDiretor(string Diretor)
     {
       var comp = Diretor;
       var diretor = _context.Filmes
@@ -64,21 +70,23 @@ namespace Api.Service.Services
             .Include(c => c.NomesAtores)
             .Include(c => c.Avaliacao)
             .AsNoTracking();
-      return await diretor.ToListAsync();
+      var entity = await diretor.ToListAsync();
+      return _mapper.Map<IEnumerable<FilmesDto>>(entity);
     }
 
-    public async Task<IEnumerable<FilmeEntity>> GetGenero(string Gernero)
+    public async Task<IEnumerable<FilmesDto>> GetGenero(string Gernero)
     {
       try
       {
-        var genero = Gernero;
-        var atores = _context.Filmes
-              .Where(g => g.Gernero == genero)
+        var gen = Gernero;
+        var gernero = _context.Filmes
+              .Where(g => g.Gernero == gen)
               .OrderBy(p => p.Name)
               .Include(c => c.NomesAtores)
               .Include(c => c.Avaliacao)
               .AsNoTracking();
-        return await atores.ToListAsync();
+        var entity = await gernero.ToListAsync();
+        return _mapper.Map<IEnumerable<FilmesDto>>(entity);
       }
       catch (Exception ex)
       {
@@ -87,42 +95,52 @@ namespace Api.Service.Services
       }
     }
 
-    public async Task<IEnumerable<FilmeEntity>> GetList()
+    public async Task<IEnumerable<FilmesDto>> GetList()
     {
       var atores = _context.Filmes
      .OrderBy(p => p.Name)
      .Include(c => c.NomesAtores)
      .Include(c => c.Avaliacao)
      .AsNoTracking();
-      return await atores.ToListAsync();
+      var entity = await atores.ToListAsync();
+      return _mapper.Map<IEnumerable<FilmesDto>>(entity);
     }
 
-    public Task<IEnumerable<FilmeEntity>> GetMaisVotado()
+    public Task<IEnumerable<FilmesDto>> GetMaisVotado()
     {
       throw new NotImplementedException();
     }
 
-    public async Task<IEnumerable<FilmeEntity>> GetName(string Name)
+    public async Task<IEnumerable<FilmesDto>> GetName(string Name)
     {
-       var name = Name;
-        var atores = _context.Filmes
-              .Where(g => g.Name == name)
-              .OrderBy(p => p.Name)
-              .Include(c => c.NomesAtores)
-              .Include(c => c.Avaliacao)
-              .AsNoTracking();
-        return await atores.ToListAsync();
+      var nam = Name;
+      var name = _context.Filmes
+            .Where(g => g.Name == nam)
+            .OrderBy(p => p.Name)
+            .Include(c => c.NomesAtores)
+            .Include(c => c.Avaliacao)
+            .AsNoTracking();
+      var entity = await name.ToListAsync();
+      return _mapper.Map<IEnumerable<FilmesDto>>(entity);
     }
 
-    public async Task<FilmeEntity> Post(FilmeEntity filme)
+    public async Task<FilmesDtoCreateReult> Post(FilmesDtoCreate filme)
     {
 
-      return await _repository.InsertAsync(filme);
+      var model = _mapper.Map<FilmesModel>(filme);
+      var entity = _mapper.Map<FilmeEntity>(model);
+      var result = await _repository.InsertAsync(entity);
+
+      return _mapper.Map<FilmesDtoCreateReult>(result);
     }
 
-    public async Task<FilmeEntity> Put(FilmeEntity filme)
+    public async Task<FilmesDtoUpdateReult> Put(FilmesDtoUpdate filme)
     {
-      return await _repository.UpdateAsync(filme);
+      var model = _mapper.Map<FilmesModel>(filme);
+      var entity = _mapper.Map<FilmeEntity>(model);
+      var result = await _repository.UpdateAsync(entity);
+
+      return _mapper.Map<FilmesDtoUpdateReult>(result);
     }
   }
 }
