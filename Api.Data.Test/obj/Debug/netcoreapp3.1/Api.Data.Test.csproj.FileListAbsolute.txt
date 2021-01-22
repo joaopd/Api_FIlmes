@@ -50,7 +50,6 @@ C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debu
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
-C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\xunit.assert.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\xunit.core.dll
@@ -144,3 +143,16 @@ C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\obj\Debu
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\obj\Debug\netcoreapp3.1\Api.Data.Test.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\obj\Debug\netcoreapp3.1\Api.Data.Test.pdb
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\obj\Debug\netcoreapp3.1\Api.Data.Test.genruntimeconfig.cache
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\appsettings.Development.json
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\appsettings.json
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\Application.exe
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\Application.dll
+c:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Data.Test\bin\Debug\netcoreapp3.1\Application.pdb

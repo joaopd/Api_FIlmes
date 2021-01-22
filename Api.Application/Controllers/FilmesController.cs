@@ -114,7 +114,7 @@ namespace Api.Application.Controllers
     [Route("IncludeMovie")]
     [Authorize(Roles = "ADM")]
 
-    public async Task<ActionResult> Post([FromBody] FilmesDtoCreate filme)
+    public async Task<ActionResult> Post([FromBody] FilmeEntity filme)
     {
       if (!ModelState.IsValid)
       {
@@ -143,7 +143,7 @@ namespace Api.Application.Controllers
     [Route("ChangeMovie")]
     [Authorize(Roles = "ADM")]
 
-    public async Task<ActionResult> Put([FromBody] FilmesDtoUpdate filme)
+    public async Task<ActionResult> Put([FromBody] FilmeEntity filme)
     {
       if (!ModelState.IsValid)
       {

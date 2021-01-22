@@ -10,8 +10,8 @@ namespace Api.Domain.Interfaces.Services.Filmes
   {
     Task<FilmesDto> Get(int id);
     Task<IEnumerable<FilmesDto>> GetAll();
-    Task<FilmesDtoCreateReult> Post(FilmesDtoCreate filme);
-    Task<FilmesDtoUpdateReult> Put(FilmesDtoUpdate filme);
+    Task<FilmeEntity> Post(FilmeEntity filme);
+    Task<FilmeEntity> Put(FilmeEntity filme);
     Task<bool> Delete(int id);
 
     Task<IEnumerable<FilmesDto>> GetDiretor(string Diretor);

@@ -1,7 +1,10 @@
 using Api.Domain.Dto;
 using Api.Domain.Dto.User;
 using Api.Domain.Entities;
+using Api.Domain.Models;
+using Api.Domain.Models.Filmes;
 using AutoMapper;
+
 
 namespace Api.CrossCutting.Mappings
 {
@@ -9,6 +12,7 @@ namespace Api.CrossCutting.Mappings
   {
     public EntityToDtoProfile()
     {
+      //user
       CreateMap<UserDto, UserEntity>()
               .ReverseMap();
 
@@ -16,6 +20,15 @@ namespace Api.CrossCutting.Mappings
                .ReverseMap();
 
       CreateMap<UserDtoUpdateReult, UserEntity>()
+              .ReverseMap();
+      //Filmes
+      CreateMap<FilmesDto, FilmeEntity>()
+              .ReverseMap();
+
+      CreateMap<FilmesDtoCreateReult, FilmeEntity>()
+               .ReverseMap();
+
+      CreateMap<FilmesDtoUpdateReult, FilmeEntity>()
               .ReverseMap();
     }
   }

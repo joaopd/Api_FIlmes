@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Api.Data.Context;
-using Api.Domain.Dto;
 using Api.Domain.Dto.User;
 using Api.Domain.Entities;
 using Api.Domain.Interfaces;
 using Api.Domain.Interfaces.Services.Filmes;
-using Api.Domain.Models.Filmes;
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 
@@ -124,23 +122,17 @@ namespace Api.Service.Services
       return _mapper.Map<IEnumerable<FilmesDto>>(entity);
     }
 
-    public async Task<FilmesDtoCreateReult> Post(FilmesDtoCreate filme)
+    public async Task<FilmeEntity> Post(FilmeEntity filme)
     {
 
-      var model = _mapper.Map<FilmesModel>(filme);
-      var entity = _mapper.Map<FilmeEntity>(model);
-      var result = await _repository.InsertAsync(entity);
-
-      return _mapper.Map<FilmesDtoCreateReult>(result);
+      return await _repository.InsertAsync(filme);
     }
 
-    public async Task<FilmesDtoUpdateReult> Put(FilmesDtoUpdate filme)
+    public async Task<FilmeEntity> Put(FilmeEntity filme)
     {
-      var model = _mapper.Map<FilmesModel>(filme);
-      var entity = _mapper.Map<FilmeEntity>(model);
-      var result = await _repository.UpdateAsync(entity);
 
-      return _mapper.Map<FilmesDtoUpdateReult>(result);
+      return await _repository.UpdateAsync(filme);
+
     }
   }
 }

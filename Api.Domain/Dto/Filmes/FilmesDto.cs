@@ -5,6 +5,7 @@ namespace Api.Domain.Dto.User
 {
   public class FilmesDto
   {
+    public int Id { get; set; }
     public string Name { get; set; }
     public string Gernero { get; set; }
     public string Diretor { get; set; }
