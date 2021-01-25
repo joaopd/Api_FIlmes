@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1CZfUx4l6aRYSyVA3rAJ2a04sBpn0NtPqfRi1EGE00uydTsQTmNW7anNqop/S4gl8spv6qP0Ly9qq7G+iG0nLw==",
+  "dgSpecHash": "Wfryo+noPwq7wVTsANO1yERGQ3lrsL75rCKZ2Xq+sUfQBZNyUNVmkkUMr9FUjtJ4rRdHB/vtRqTQ5lPkReEQgg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jpkab\\Documents\\Projetos\\.NETECORE\\API_FILME\\src\\Api.Service\\Service.csproj",
+  "projectFilePath": "c:\\Users\\jpkab\\Documents\\Projetos\\.NETECORE\\API_FILME\\src\\Api.Service\\Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkab\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\jpkab\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

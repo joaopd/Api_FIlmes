@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6o/FjDI1CIcMrDVXx5yffsrznSWOQDnR4KKA9UvteZ/2C0edut59VBm0gdmVTtM8budNXa5huLfGBedaI0xGnQ==",
+  "dgSpecHash": "n19LT7JpgYpnYvwhJ+Un1JuH129kBmR7SGeCbAazN6YvFfQavO3q6oR5veQkzxYJoEY+uY85aM/+SYxNyR+FhQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jpkab\\Documents\\Projetos\\.NETECORE\\API_FILME\\src\\Api.Application\\Application.csproj",
+  "projectFilePath": "c:\\Users\\jpkab\\Documents\\Projetos\\.NETECORE\\API_FILME\\src\\Api.Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpkab\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\jpkab\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
