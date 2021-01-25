@@ -19,7 +19,7 @@ namespace Api.Data.Test
     private string dataBaseName = $"dbApiTest {Guid.NewGuid().ToString().Replace("-", string.Empty)}";
     public ServiceProvider ServiceProvider { get; private set; }
 
-    public BaseTeste()
+    public DbTeste()
     {
       var serviceCollection = new ServiceCollection();
       serviceCollection.AddDbContext<MyContext>(o =>
