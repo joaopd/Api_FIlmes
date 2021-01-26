@@ -16,16 +16,17 @@ namespace Api.Data.Test
   public class DbTeste : IDisposable
   {
 
-    private string dataBaseName = $"dbApiTest {Guid.NewGuid().ToString().Replace("-", string.Empty)}";
+    private string dataBaseName = $"dbApiTest3 {Guid.NewGuid().ToString().Replace("-", string.Empty)}";
     public ServiceProvider ServiceProvider { get; private set; }
 
     public DbTeste()
     {
       var serviceCollection = new ServiceCollection();
       serviceCollection.AddDbContext<MyContext>(o =>
-        o.UseSqlServer($"Presist Security Info=True;Server=localhost;Database={dataBaseName};User=adm;Password=112233"),
+        o.UseSqlServer($"Presist Security Info=True;Server=(localdb)\\MSSQLLocalDB;Database={dataBaseName};ID=adm;pwd=112233"),
           ServiceLifetime.Transient
       );
+
       ServiceProvider = serviceCollection.BuildServiceProvider();
       using (var context = ServiceProvider.GetService<MyContext>())
       {
