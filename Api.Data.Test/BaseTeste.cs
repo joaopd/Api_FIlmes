@@ -23,7 +23,7 @@ namespace Api.Data.Test
     {
       var serviceCollection = new ServiceCollection();
       serviceCollection.AddDbContext<MyContext>(o =>
-        o.UseSqlServer($"Presist Security Info=True;Server=(localdb)\\MSSQLLocalDB;Database={dataBaseName};ID=adm;pwd=112233"),
+        o.UseSqlServer($"Persist Security Info=True;Server=(localdb)\\MSSQLLocalDB;Database={dataBaseName};User=adm;Password=112233"),
           ServiceLifetime.Transient
       );
 
