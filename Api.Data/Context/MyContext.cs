@@ -21,15 +21,15 @@ namespace Api.Data.Context
       base.OnModelCreating(modelBuilder);
       modelBuilder.Entity<UserEntity>(new UserMap().Configure);
 
-      modelBuilder.Entity<UserEntity>().HasData(
-        new UserEntity
-        {
-          Name = "Administrador",
-          Email = "jpkabral@live.com",
-          Senha = "123456",
-          Role = "Adm"
-        }
-      );
+      // modelBuilder.Entity<UserEntity>().HasData(
+      //   new UserEntity
+      //   {
+      //     Name = "Administrador",
+      //     Email = "jpkabral@live.com",
+      //     Senha = "123456",
+      //     Role = "Adm"
+      //   }
+      // );
 
       base.OnModelCreating(modelBuilder);
       modelBuilder.Entity<FilmeEntity>(new FilmeMap().Configure);

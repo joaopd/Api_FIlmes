@@ -8,11 +8,11 @@ using Xunit;
 
 namespace Api.Data.Test
 {
-  public class UsuarioCrudCompleto : BaseTeste, IClassFixture<DbTeste>
+  public class FilmesCrudCompleto : BaseTeste, IClassFixture<DbTeste>
   {
     private ServiceProvider _serviceProvider;
 
-    public UsuarioCrudCompleto(DbTeste dbTeste)
+    public FilmesCrudCompleto(DbTeste dbTeste)
     {
       _serviceProvider = dbTeste.ServiceProvider;
     }
@@ -69,5 +69,67 @@ namespace Api.Data.Test
 
       }
     }
+
+    [Fact(DisplayName = "Regra de negocios Filme")]
+    [Trait("Regra de negocios", "FilmeEntity")]
+    public async Task E_Possivel_Realizar_CRUD_Filme()
+    {
+      using (var context = _serviceProvider.GetService<MyContext>())
+      {
+        FilmeImplementation _repositorio = new FilmeImplementation(context);
+        FilmeEntity _entity = new FilmeEntity
+        {
+          Name = Faker.Name.First(),
+          Gernero = Faker.Name.First(),
+          Diretor = Faker.Name.FullName()
+        };
+
+        var _registroCriado = await _repositorio.InsertAsync(_entity);
+        Assert.NotNull(_registroCriado);
+        Assert.Equal(_entity.Name, _registroCriado.Name);
+        Assert.Equal(_entity.Gernero, _registroCriado.Gernero);
+        Assert.Equal(_entity.Diretor, _registroCriado.Diretor);
+        Assert.False(_registroCriado.Id == null);
+
+
+        _entity.Name = Faker.Name.First();
+        var _registroAtualizado = await _repositorio.UpdateAsync(_entity);
+        Assert.NotNull(_registroCriado);
+        Assert.Equal(_entity.Name, _registroAtualizado.Name);
+
+
+        var _registroExiste = await _repositorio.ExistAsync(_registroAtualizado.Id);
+        Assert.True(_registroExiste);
+
+
+        var _registroSelecionado = await _repositorio.SelectAsync(_registroAtualizado.Id);
+        Assert.NotNull(_registroSelecionado);
+
+
+        var _todosOsRegistros = await _repositorio.SelectAsync();
+        Assert.NotNull(_todosOsRegistros);
+        Assert.True(_todosOsRegistros.Count() > 0);
+
+
+        var _RegistrosNomeFilme = await _repositorio.GetName(_registroAtualizado.Name);
+        Assert.NotNull(_todosOsRegistros);
+        Assert.True(_todosOsRegistros.Count() > 0);
+
+
+        var _RegistrosNomeDiretor = await _repositorio.GetDiretor(_registroAtualizado.Diretor);
+        Assert.NotNull(_todosOsRegistros);
+        Assert.True(_todosOsRegistros.Count() > 0);
+
+
+        var _RegistrosNomeGenero = await _repositorio.GetGenero(_registroAtualizado.Gernero);
+        Assert.NotNull(_todosOsRegistros);
+        Assert.True(_todosOsRegistros.Count() > 0);
+
+
+        var _registroDelete = await _repositorio.DeleteAsync(_registroAtualizado.Id);
+        Assert.True(_registroDelete);
+      }
+    }
+
   }
 }
