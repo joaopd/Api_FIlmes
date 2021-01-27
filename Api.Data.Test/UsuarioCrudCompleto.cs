@@ -23,8 +23,8 @@ namespace Api.Data.Test
     {
       using (var context = _serviceProvider.GetService<MyContext>())
       {
-        UserImplemetation _repositorio = new UserImplemetation(context);
-        UserEntity _entity = new UserEntity
+        UserImplemetation repositorio = new UserImplemetation(context);
+        UserEntity entity = new UserEntity
         {
           Email = Faker.Internet.Email(),
           Name = Faker.Name.FullName(),
@@ -32,102 +32,102 @@ namespace Api.Data.Test
           Role = "Adm"
         };
 
-        var _registroCriado = await _repositorio.InsertAsync(_entity);
-        Assert.NotNull(_registroCriado);
-        Assert.Equal(_entity.Email, _registroCriado.Email);
-        Assert.Equal(_entity.Name, _registroCriado.Name);
-        Assert.Equal(_entity.Senha, _registroCriado.Senha);
-        Assert.Equal(_entity.Role, _registroCriado.Role);
-        Assert.False(_registroCriado.Id == null);
+        var registroCriado = await repositorio.InsertAsync(entity);
+        Assert.NotNull(registroCriado);
+        Assert.Equal(entity.Email, registroCriado.Email);
+        Assert.Equal(entity.Name, registroCriado.Name);
+        Assert.Equal(entity.Senha, registroCriado.Senha);
+        Assert.Equal(entity.Role, registroCriado.Role);
+        Assert.False(registroCriado.Id == null);
 
 
-        _entity.Name = Faker.Name.First();
-        var _registroAtualizado = await _repositorio.UpdateAsync(_entity);
-        Assert.NotNull(_registroCriado);
-        Assert.Equal(_entity.Email, _registroAtualizado.Email);
-        Assert.Equal(_entity.Name, _registroAtualizado.Name);
+        entity.Name = Faker.Name.First();
+        var registroAtualizado = await repositorio.UpdateAsync(entity);
+        Assert.NotNull(registroCriado);
+        Assert.Equal(entity.Email, registroAtualizado.Email);
+        Assert.Equal(entity.Name, registroAtualizado.Name);
 
-        var _registroExiste = await _repositorio.ExistAsync(_registroAtualizado.Id);
-        Assert.True(_registroExiste);
+        var registroExiste = await repositorio.ExistAsync(registroAtualizado.Id);
+        Assert.True(registroExiste);
 
-        var _registroSelecionado = await _repositorio.SelectAsync(_registroAtualizado.Id);
-        Assert.NotNull(_registroSelecionado);
+        var registroSelecionado = await repositorio.SelectAsync(registroAtualizado.Id);
+        Assert.NotNull(registroSelecionado);
 
-        var _todosOsRegistros = await _repositorio.SelectAsync();
-        Assert.NotNull(_todosOsRegistros);
-        Assert.True(_todosOsRegistros.Count() > 0);
-
-
-        var _registroDelete = await _repositorio.DeleteAsync(_registroAtualizado.Id);
-        Assert.True(_registroDelete);
+        var todosOsRegistros = await repositorio.SelectAsync();
+        Assert.NotNull(todosOsRegistros);
+        Assert.True(todosOsRegistros.Count() > 0);
 
 
-        var _UsuarioPadrao = await _repositorio.FindByLogin("jpkabral@live.com");
-        Assert.NotNull(_UsuarioPadrao);
-        Assert.Equal("jpkabral@live.com", _UsuarioPadrao.Email);
-        Assert.Equal("123456", _UsuarioPadrao.Senha);
+        var registroDelete = await repositorio.DeleteAsync(registroAtualizado.Id);
+        Assert.True(registroDelete);
+
+
+        var UsuarioPadrao = await repositorio.FindByLogin("jpkabral@live.com");
+        Assert.NotNull(UsuarioPadrao);
+        Assert.Equal("jpkabral@live.com", UsuarioPadrao.Email);
+        Assert.Equal("123456", UsuarioPadrao.Senha);
 
       }
     }
 
     [Fact(DisplayName = "Regra de negocios Filme")]
     [Trait("Regra de negocios", "FilmeEntity")]
-    public async Task E_Possivel_Realizar_CRUD_Filme()
+    public async Task E_Possivelrealizar_CRUD_Filme()
     {
       using (var context = _serviceProvider.GetService<MyContext>())
       {
-        FilmeImplementation _repositorio = new FilmeImplementation(context);
-        FilmeEntity _entity = new FilmeEntity
+        FilmeImplementation repositorio = new FilmeImplementation(context);
+        FilmeEntity entity = new FilmeEntity
         {
           Name = Faker.Name.First(),
-          Gernero = Faker.Name.First(),
+          Genero = Faker.Name.First(),
           Diretor = Faker.Name.FullName()
         };
 
-        var _registroCriado = await _repositorio.InsertAsync(_entity);
-        Assert.NotNull(_registroCriado);
-        Assert.Equal(_entity.Name, _registroCriado.Name);
-        Assert.Equal(_entity.Gernero, _registroCriado.Gernero);
-        Assert.Equal(_entity.Diretor, _registroCriado.Diretor);
-        Assert.False(_registroCriado.Id == null);
+        var registroCriado = await repositorio.InsertAsync(entity);
+        Assert.NotNull(registroCriado);
+        Assert.Equal(entity.Name, registroCriado.Name);
+        Assert.Equal(entity.Genero, registroCriado.Genero);
+        Assert.Equal(entity.Diretor, registroCriado.Diretor);
+        Assert.False(registroCriado.Id == null);
 
 
-        _entity.Name = Faker.Name.First();
-        var _registroAtualizado = await _repositorio.UpdateAsync(_entity);
-        Assert.NotNull(_registroCriado);
-        Assert.Equal(_entity.Name, _registroAtualizado.Name);
+        entity.Name = Faker.Name.First();
+        var registroAtualizado = await repositorio.UpdateAsync(entity);
+        Assert.NotNull(registroCriado);
+        Assert.Equal(entity.Name, registroAtualizado.Name);
 
 
-        var _registroExiste = await _repositorio.ExistAsync(_registroAtualizado.Id);
-        Assert.True(_registroExiste);
+        var registroExiste = await repositorio.ExistAsync(registroAtualizado.Id);
+        Assert.True(registroExiste);
 
 
-        var _registroSelecionado = await _repositorio.SelectAsync(_registroAtualizado.Id);
-        Assert.NotNull(_registroSelecionado);
+        var registroSelecionado = await repositorio.SelectAsync(registroAtualizado.Id);
+        Assert.NotNull(registroSelecionado);
 
 
-        var _todosOsRegistros = await _repositorio.SelectAsync();
-        Assert.NotNull(_todosOsRegistros);
-        Assert.True(_todosOsRegistros.Count() > 0);
+        var todosOsRegistros = await repositorio.SelectAsync();
+        Assert.NotNull(todosOsRegistros);
+        Assert.True(todosOsRegistros.Count() > 0);
 
 
-        var _RegistrosNomeFilme = await _repositorio.GetName(_registroAtualizado.Name);
-        Assert.NotNull(_todosOsRegistros);
-        Assert.True(_todosOsRegistros.Count() > 0);
+        var registrosNomeFilme = await repositorio.GetName(registroAtualizado.Name);
+        Assert.NotNull(todosOsRegistros);
+        Assert.True(todosOsRegistros.Count() > 0);
 
 
-        var _RegistrosNomeDiretor = await _repositorio.GetDiretor(_registroAtualizado.Diretor);
-        Assert.NotNull(_todosOsRegistros);
-        Assert.True(_todosOsRegistros.Count() > 0);
+        var registrosNomeDiretor = await repositorio.GetDiretor(registroAtualizado.Diretor);
+        Assert.NotNull(todosOsRegistros);
+        Assert.True(todosOsRegistros.Count() > 0);
 
 
-        var _RegistrosNomeGenero = await _repositorio.GetGenero(_registroAtualizado.Gernero);
-        Assert.NotNull(_todosOsRegistros);
-        Assert.True(_todosOsRegistros.Count() > 0);
+        var registrosNomeGenero = await repositorio.GetGenero(registroAtualizado.Genero);
+        Assert.NotNull(todosOsRegistros);
+        Assert.True(todosOsRegistros.Count() > 0);
 
 
-        var _registroDelete = await _repositorio.DeleteAsync(_registroAtualizado.Id);
-        Assert.True(_registroDelete);
+        var registroDelete = await repositorio.DeleteAsync(registroAtualizado.Id);
+        Assert.True(registroDelete);
       }
     }
 
