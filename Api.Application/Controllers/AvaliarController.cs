@@ -19,30 +19,30 @@ namespace Api.Application.Controllers
       _service = service;
     }
 
-    [HttpPost]
-    [Route("RateMovie", Name = "Avaliar")]
-    public async Task<ActionResult> Avaliar([FromBody] AvaliacaoEntity item)
-    {
-      if (!ModelState.IsValid)
-      {
-        return BadRequest(ModelState); //400 solicitação invalida
-      }
-      try
-      {
-        var result = await _service.Avaliar(item);
-        if (result != null)
-        {
-          return Ok(result);
-        }
-        else
-        {
-          return BadRequest();
-        }
-      }
-      catch (ArgumentException e)
-      {
-        return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
-      }
-    }
+    // [HttpPost]
+    // [Route("RateMovie", Name = "Avaliar")]
+    // public async Task<ActionResult> Avaliar([FromBody] AvaliacaoEntity item)
+    // {
+    //   if (!ModelState.IsValid)
+    //   {
+    //     return BadRequest(ModelState); //400 solicitação invalida
+    //   }
+    //   try
+    //   {
+    //     var result = await _service.Avaliar(item);
+    //     if (result != null)
+    //     {
+    //       return Ok(result);
+    //     }
+    //     else
+    //     {
+    //       return BadRequest();
+    //     }
+    //   }
+    //   catch (ArgumentException e)
+    //   {
+    //     return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+    //   }
+    //}
   }
 }
