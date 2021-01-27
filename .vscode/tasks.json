@@ -37,6 +37,16 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Data.Testes",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "test",
+                "run",
+                "${workspaceFolder}/Api.Data.Teste/Api.Data.Test.csproj"
+            ]
         }
     ]
 }
