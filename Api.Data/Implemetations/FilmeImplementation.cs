@@ -39,11 +39,11 @@ namespace Api.Data.Implemetations
       return await diretor.ToListAsync();
     }
 
-    public async Task<IEnumerable<FilmeEntity>> GetGenero(string Gernero)
+    public async Task<IEnumerable<FilmeEntity>> GetGenero(string Genero)
     {
-      var genero = Gernero;
+      var genero = Genero;
       var atores = _context.Filmes
-              .Where(g => g.Gernero == genero)
+              .Where(g => g.Genero == genero)
               .OrderBy(p => p.Name)
               .Include(c => c.NomesAtores)
               .Include(c => c.Avaliacao)

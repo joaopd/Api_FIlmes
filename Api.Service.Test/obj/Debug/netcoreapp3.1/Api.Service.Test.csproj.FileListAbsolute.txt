@@ -9,6 +9,7 @@ C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\D
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\Castle.Core.dll
+C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\Faker.NETCore.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
@@ -57,6 +58,7 @@ C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\D
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\xunit.assert.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\xunit.core.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\xunit.execution.dotnet.dll
+C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\de-DE\Faker.NETCore.resources.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\cs\Microsoft.TestPlatform.CoreUtilities.resources.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\cs\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll
 C:\Users\jpkab\Documents\Projetos\.NETECORE\API_FILME\src\Api.Service.Test\bin\Debug\netcoreapp3.1\de\Microsoft.TestPlatform.CoreUtilities.resources.dll

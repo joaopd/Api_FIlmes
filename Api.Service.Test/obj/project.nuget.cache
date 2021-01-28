@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nzIOfGSpdm/5wTIYqLpoa6k83bgvvioudcsSk9ptm/xcHFmtFxeDtU2DDuLLAZuzA4sQQoXgsY+1fs8HbFb4kw==",
+  "dgSpecHash": "5psNEZ3EE3QBuhHQHVJYH/u7wdM4xjrEgwLaykEsRi4iFL0q9cw966nLAj+SksF+oD/wqv9KofKrXGrlSbLMFQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\jpkab\\Documents\\Projetos\\.NETECORE\\API_FILME\\src\\Api.Service.Test\\Api.Service.Test.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\jpkab\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\jpkab\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\jpkab\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
+    "C:\\Users\\jpkab\\.nuget\\packages\\faker.netcore\\1.0.2\\faker.netcore.1.0.2.nupkg.sha512",
     "C:\\Users\\jpkab\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\jpkab\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\jpkab\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",

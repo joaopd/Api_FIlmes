@@ -17,7 +17,7 @@ namespace Api.Data.Mapping
             .HasMaxLength(100);
 
 
-      builder.Property(u => u.Gernero)
+      builder.Property(u => u.Genero)
               .IsRequired()
               .HasMaxLength(254);
 

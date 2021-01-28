@@ -57,15 +57,14 @@ namespace Api.Data.Test
         Assert.NotNull(todosOsRegistros);
         Assert.True(todosOsRegistros.Count() > 0);
 
-
         var registroDelete = await repositorio.DeleteAsync(registroAtualizado.Id);
         Assert.True(registroDelete);
-
 
         var UsuarioPadrao = await repositorio.FindByLogin("jpkabral@live.com");
         Assert.NotNull(UsuarioPadrao);
         Assert.Equal("jpkabral@live.com", UsuarioPadrao.Email);
-        Assert.Equal("123456", UsuarioPadrao.Senha);
+        Assert.Equal("Vur67203", UsuarioPadrao.Senha);
+
 
       }
     }

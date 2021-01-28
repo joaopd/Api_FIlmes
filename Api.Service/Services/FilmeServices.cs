@@ -72,13 +72,13 @@ namespace Api.Service.Services
       return _mapper.Map<IEnumerable<FilmesDto>>(entity);
     }
 
-    public async Task<IEnumerable<FilmesDto>> GetGenero(string Gernero)
+    public async Task<IEnumerable<FilmesDto>> GetGenero(string Genero)
     {
       try
       {
-        var gen = Gernero;
+        var gen = Genero;
         var gernero = _context.Filmes
-              .Where(g => g.Gernero == gen)
+              .Where(g => g.Genero == gen)
               .OrderBy(p => p.Name)
               .Include(c => c.NomesAtores)
               .Include(c => c.Avaliacao)

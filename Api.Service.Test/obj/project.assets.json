@@ -56,6 +56,23 @@
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
       },
+      "Faker.NETCore/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "lib/netstandard1.6/Faker.NETCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Faker.NETCore.dll": {}
+        },
+        "resource": {
+          "lib/netstandard1.6/de-DE/Faker.NETCore.resources.dll": {
+            "locale": "de-DE"
+          }
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -2618,6 +2635,19 @@
         "build/netstandard1.0/coverlet.core.pdb",
         "coverlet.collector.1.2.0.nupkg.sha512",
         "coverlet.collector.nuspec"
+      ]
+    },
+    "Faker.NETCore/1.0.2": {
+      "sha512": "teRWZFwtBSuMRo2jxB4/DfCo3nprjMtjb7tjBfhrnz+BPhQMivW9cVo06kLr4GAJjrCOvCNQ2sJckRwGvMmK0Q==",
+      "type": "package",
+      "path": "faker.netcore/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "faker.netcore.1.0.2.nupkg.sha512",
+        "faker.netcore.nuspec",
+        "lib/netstandard1.6/Faker.NETCore.dll",
+        "lib/netstandard1.6/de-DE/Faker.NETCore.resources.dll"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -8269,6 +8299,7 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.0",
       "CrossCutting >= 1.0.0",
       "Domain >= 1.0.0",
+      "Faker.NETCore >= 1.0.2",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "Moq >= 4.16.0",
       "Service >= 1.0.0",
@@ -8331,6 +8362,10 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
             "version": "[8.1.0, )"
+          },
+          "Faker.NETCore": {
+            "target": "Package",
+            "version": "[1.0.2, )"
           },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
