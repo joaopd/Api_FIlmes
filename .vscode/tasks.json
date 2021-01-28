@@ -37,26 +37,27 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "Data.Testes",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "test",
-                "run",
-                "${workspaceFolder}/Api.Data.Test/Api.Data.Test.csproj"
-            ]
-        },
-        {
-            "label": "Service.Testes",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "test",
-                "run",
-                "${workspaceFolder}/Api.Service.Test/Api.Service.Test.csproj"
-            ]
         }
+        // },
+        // {
+        //     "label": "Data.Testes",
+        //     "command": "dotnet",
+        //     "type": "process",
+        //     "args": [
+        //         "test",
+        //         "run",
+        //         "${workspaceFolder}/Api.Data.Test/Api.Data.Test.csproj"
+        //     ]
+        // },
+        // {
+        //     "label": "Service.Testes",
+        //     "command": "dotnet",
+        //     "type": "process",
+        //     "args": [
+        //         "test",
+        //         "run",
+        //         "${workspaceFolder}/Api.Service.Test/Api.Service.Test.csproj"
+        //     ]
+        // }
     ]
 }

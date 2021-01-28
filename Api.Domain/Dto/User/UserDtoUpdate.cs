@@ -18,12 +18,10 @@ namespace Api.Domain.Dto
 
     [Required(ErrorMessage = "Senha e um campo obrigatorio")]
     [StringLength(100, ErrorMessage = "Tamanho maximo e de {1} caracteres")]
-    [EmailAddress(ErrorMessage = "Senha no formato invalido")]
     public string Senha { get; set; }
 
     [Required(ErrorMessage = "Role e um campo obrigatorio")]
     [StringLength(100, ErrorMessage = "Tamanho maximo e de {1} caracteres")]
-    [EmailAddress(ErrorMessage = "Role no formato invalido")]
     public string Role { get; set; }
 
   }
