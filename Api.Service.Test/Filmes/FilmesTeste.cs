@@ -62,6 +62,7 @@ namespace Api.Service.Test.Filmes
         Diretor = DiretorFilmes,
         Imagem = ImagemFIlmes
       };
+      
       filmesDtoCreateReult = new FilmesDtoCreateReult
       {
         Name = NomeFilmes,
@@ -76,6 +77,7 @@ namespace Api.Service.Test.Filmes
         Diretor = DiretorFilmes,
         Imagem = ImagemFIlmes
       };
+
       filmesDtoUpdateReult = new FilmesDtoUpdateReult
       {
         Name = NomeFilmes,
