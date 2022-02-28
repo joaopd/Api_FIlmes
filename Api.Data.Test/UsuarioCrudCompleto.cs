@@ -62,8 +62,8 @@ namespace Api.Data.Test
 
         var UsuarioPadrao = await repositorio.FindByLogin("jpkabral@live.com");
         Assert.NotNull(UsuarioPadrao);
-        Assert.Equal("jpkabral@live.com", UsuarioPadrao.Email);
-        Assert.Equal("Vur67203", UsuarioPadrao.Senha);
+        Assert.Equal("teste@teste.com", UsuarioPadrao.Email);
+        Assert.Equal("teste123", UsuarioPadrao.Senha);
 
 
       }
